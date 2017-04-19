@@ -95,7 +95,7 @@ mSoundId = mSoundPool.load(assetPath, 1);
 
       //  NativeAudioAsset asset = new NativeAudioAsset(
       //      afd, voices, (float)volume);
-        assetMap.put(audioID, mSoundId);
+        soundMap.put(audioID, mSoundId);
 
         return new PluginResult(Status.OK);
       } else {
