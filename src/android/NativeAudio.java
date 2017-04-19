@@ -27,6 +27,7 @@ import org.apache.cordova.CordovaPlugin;
 import org.apache.cordova.PluginResult;
 import org.apache.cordova.PluginResult.Status;
 import org.json.JSONObject;
+import android.media.SoundPool;
 
 
 public class NativeAudio extends CordovaPlugin implements AudioManager.OnAudioFocusChangeListener {
