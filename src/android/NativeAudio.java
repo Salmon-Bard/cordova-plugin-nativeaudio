@@ -88,7 +88,7 @@ int mSoundId;
             .setMaxStreams(1)
             .build();
        // String fullPath = "www/".concat(assetPath);
-mSoundId = mSoundPool.load(this, assetPath, 1);
+mSoundId = mSoundPool.load(assetPath, 1);
       //  Context ctx = cordova.getActivity().getApplicationContext();
      //   AssetManager am = ctx.getResources().getAssets();
      //   AssetFileDescriptor afd = am.openFd(fullPath);
