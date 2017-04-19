@@ -82,15 +82,16 @@ public class NativeAudio extends CordovaPlugin implements AudioManager.OnAudioFo
           voices = data.getInt(3);
         }
 
-        String fullPath = assetPath;
-
-        Context ctx = cordova.getActivity().getApplicationContext();
-        AssetManager am = ctx.getResources().getAssets();
-        AssetFileDescriptor afd = OpenAssetFile(fullPath);
-
-        NativeAudioAsset asset = new NativeAudioAsset(
-            afd, voices, (float)volume);
-        assetMap.put(audioID, fullPath);
+       int assetIntID = 0;
+if(assetPath.startsWith("/")){
+    assetIntID = soundPool.load(assetPath,1);
+else {
+    Context ctx = cordova.getActivity().getApplicationContext();
+    AssetManager am = ctx.getResources().getAssets();
+    AssetFileDescriptor afd = am.openFd("www/" + assetPath);
+    assetIntID = soundPool.load(afd, 1);
+}
+soundMap.put(audioID, assetIntID);
 
         return new PluginResult(Status.OK);
       } else {
@@ -333,3 +334,5 @@ public class NativeAudio extends CordovaPlugin implements AudioManager.OnAudioFo
         }
     }
 }
+
+    
