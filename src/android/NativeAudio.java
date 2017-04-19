@@ -82,7 +82,7 @@ public class NativeAudio extends CordovaPlugin implements AudioManager.OnAudioFo
           voices = data.getInt(3);
         }
 
-        String fullPath = ssetPath;
+        String fullPath = assetPath;
 
         Context ctx = cordova.getActivity().getApplicationContext();
         AssetManager am = ctx.getResources().getAssets();
@@ -333,4 +333,3 @@ public class NativeAudio extends CordovaPlugin implements AudioManager.OnAudioFo
         }
     }
 }
- 
